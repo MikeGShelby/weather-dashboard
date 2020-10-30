@@ -1,0 +1,35 @@
+.header{
+    background-color: darkgray;
+    color: white;
+}
+
+.main-grid {
+    display: grid;
+    gap:5px;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "search-section weather-overview"
+    "search-section forecast";
+    padding:0px 10px;
+    width: auto;
+}
+
+.search-section {
+background-color: green;
+}
+
+.weather-overview {
+background-color:red;
+}
+
+.forecast {
+    display: flex;
+}
+
+.forecast-card {
+flex-flow: wrap ;
+padding: 50px;
+background-color: blue;
+color: white;
+}

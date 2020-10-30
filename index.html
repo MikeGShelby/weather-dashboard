@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="app-title"><i class="fas fa-rainbow"></i> Weather Dashboard</h1>
+    </header>
+
+    <main class="main-grid">
+
+    <aside class="search-section">
+
+        <form class="city-search-form">
+            <label class="form-label" for="username"> <h3 class="card-header text-uppercase">Search for a City</h3></label>
+            <input name="username" id="username" type="text" autofocus="true" class="form-input" />
+            <button type="submit" class="btn"><i class="fas fa-search"></i></button>
+        </form>
+
+        <section class="city-search-list">
+            <ul>
+                <li><button class="btn" data-city="austin">Austin</button></li>
+                <li><button class="btn" data-city="Chicago">Chicago</button></li>
+                <li><button class="btn" data-city="New York">New York</button></li>
+                <li><button class="btn" data-city="Orlando">Orlando</button></li>
+                <li><button class="btn" data-city="San Francisco">San Francisco</button></li>
+                <li><button class="btn" data-city="Seattle">Seattle</button></li>
+                <li><button class="btn" data-city="Denver">Denver</button></li>
+                <li><button class="btn" data-city="Atlanta">Atlanta</button></li>
+            </ul>
+        </section>
+
+    </aside>
+
+
+    <section class="weather-overview">
+      <h2 class="subtitle">City Name Here<span id="repo-search-term"></span></h2>
+        <ul class="weather-overview-info">
+            <li>Temperature:</li>
+            <li>Humidity:</li>
+            <li>Wind Speed:</li>
+            <li>Uv Index:</li>
+        </ul>
+    </section>
+
+    <section class="forecast">
+        <h2 class="forecast-title">5-Day Forecast:</h2>
+            <div class="forecast-card day1">
+                <h4>8/16/2020</h4>
+                <p>Temp: 86.84 F</p>
+                <p>Humidity: 43%</p>
+            </div>
+
+            <div class="forecast-card day2">
+                <h4>8/17/2020</h4>
+                <p>Temp: 86.84 F</p>
+                <p>Humidity: 43%</p>
+            </div>
+
+            <div class="forecast-card day3">
+                <h4>8/18/2020</h4>
+                <p>Temp: 86.84 F</p>
+                <p>Humidity: 43%</p>
+            </div>
+
+            <div class="forecast-card day4">
+                <h4>8/19/2020</h4>
+                <p>Temp: 86.84 F</p>
+                <p>Humidity: 43%</p>
+            </div>
+
+            <div class="forecast-card day5">
+                <h4>8/20/2020</h4>
+                <p>Temp: 86.84 F</p>
+                <p>Humidity: 43%</p>
+            </div>
+      </section>
+
+    </main>
+
+
+  <script src="./assets/js/homepage.js"></script>
+</body>
+
+</html>
