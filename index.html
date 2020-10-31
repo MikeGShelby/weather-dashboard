@@ -21,23 +21,27 @@
     <aside class="search-section">
 
         <form class="city-search-form">
-            <label class="form-label" for="username"> <h3 class="card-header text-uppercase">Search for a City</h3></label>
-            <input name="username" id="username" type="text" autofocus="true" class="form-input" />
-            <button type="submit" class="btn"><i class="fas fa-search"></i></button>
+            <label class="form-label" for="city-input">
+                <h3 class="search-title">
+                Search for a City
+                </h3>
+            </label>
+            <input name="city-input" id="city" type="text" autofocus="true" class="form-input" />
+            <button type="submit" class="btn search-btn">
+                <i class="fas fa-search"></i>
+            </button>
         </form>
 
-        <section class="city-search-list">
-            <ul>
-                <li><button class="btn" data-city="austin">Austin</button></li>
-                <li><button class="btn" data-city="Chicago">Chicago</button></li>
-                <li><button class="btn" data-city="New York">New York</button></li>
-                <li><button class="btn" data-city="Orlando">Orlando</button></li>
-                <li><button class="btn" data-city="San Francisco">San Francisco</button></li>
-                <li><button class="btn" data-city="Seattle">Seattle</button></li>
-                <li><button class="btn" data-city="Denver">Denver</button></li>
-                <li><button class="btn" data-city="Atlanta">Atlanta</button></li>
+            <ul class="city-search-list">
+                <li><button class="btn city-btn" data-city="austin">Austin</button></li>
+                <li><button class="btn city-btn" data-city="Chicago">Chicago</button></li>
+                <li><button class="btn city-btn" data-city="New York">New York</button></li>
+                <li><button class="btn city-btn" data-city="Orlando">Orlando</button></li>
+                <li><button class="btn city-btn" data-city="San Francisco">San Francisco</button></li>
+                <li><button class="btn city-btn" data-city="Seattle">Seattle</button></li>
+                <li><button class="btn city-btn" data-city="Denver">Denver</button></li>
+                <li><button class="btn city-btn" data-city="Atlanta">Atlanta</button></li>
             </ul>
-        </section>
 
     </aside>
 
@@ -54,6 +58,8 @@
 
     <section class="forecast">
         <h2 class="forecast-title">5-Day Forecast:</h2>
+
+        <div class="forecast-cards">
             <div class="forecast-card day1">
                 <h4>8/16/2020</h4>
                 <p>Temp: 86.84 F</p>
@@ -83,6 +89,7 @@
                 <p>Temp: 86.84 F</p>
                 <p>Humidity: 43%</p>
             </div>
+        </div>
       </section>
 
     </main>

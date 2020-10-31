@@ -1,30 +1,111 @@
-.header{
+* {
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
+}
+
+/* HEADER */
+.header {
+    background-color: rgb(48, 46, 46);
+    color: white;
+    margin: 0px;
+    padding: 25px;
+    text-align: center;
+    background-image: linear-gradient(to bottom, rgb(56, 55, 55), rgb(80, 80, 80));
+}
+
+.header h1 {
+margin: 0px;
+}
+
+/* MAIN LAYOUT */
+
+
+
+/* SEARCH SECTION */
+.search-section {
     background-color: darkgray;
+    grid-area: search-section;
+    display: flex;
+    flex-flow: column;
+    padding: 12px;
+}
+
+.search-title {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 0px;
+}
+
+.city-search-form {
+    padding: 10px;
+    margin: 0px 2px;
+}
+
+.city-search-form input {
+    width: 100%;
+    height: 20px;
+    padding: 30px;
+    border-radius: 5px;
+    border: solid 1px lightgray;
+    position: relative;
+}
+
+.search-btn {
+    position: absolute;
+    margin-left: -40px;
+    height: 45px;
+    border: none;
+    background-color: transparent;
+    color:rgb(107, 107, 107);
+    font-size: 25px;
+}
+
+.search-btn:hover {
+    color: darkslategray;
+    cursor: pointer;
+
+}
+
+.city-search-list {
+    list-style: none;
+    padding: 10px;
+}
+
+.city-btn {
+    padding: 10px;
+    margin: 0px 2px;
+    width:100%;
+}
+
+.city-btn:hover {
+    cursor: pointer;
+    background-color: darkslategray;
     color: white;
 }
 
-.main-grid {
-    display: grid;
-    gap:5px;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-    "search-section weather-overview"
-    "search-section forecast";
-    padding:0px 10px;
-    width: auto;
-}
 
-.search-section {
-background-color: green;
-}
-
+/* WEATHER OVERVIEW SECTION */
 .weather-overview {
 background-color:red;
 }
 
+/* FORECAST SECTION */
 .forecast {
-    display: flex;
+    display: block;
+    margin:auto;
+    background-color: darkblue;
+    color: white;
+    width:
+}
+
+.forecast-title {
+    text-align: center;
+    padding: 10px;
+}
+
+.forecast-cards {
+    display: block;
 }
 
 .forecast-card {
@@ -32,4 +113,21 @@ flex-flow: wrap ;
 padding: 50px;
 background-color: blue;
 color: white;
+}
+
+
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (min-width: 750px) {
+    .main-grid {
+        display: grid;
+        gap:5px;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        "search-section weather-overview"
+        "search-section forecast";
+        padding:0px 10px;
+        width: auto;
+    }
 }
