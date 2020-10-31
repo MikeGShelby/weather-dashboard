@@ -12,21 +12,23 @@
 </head>
 
 <body>
+    <!-- HEADER -->
     <header class="header">
         <h1 class="app-title"><i class="fas fa-rainbow"></i> Weather Dashboard</h1>
     </header>
 
     <main class="main-grid">
 
+    <!-- SEARCH SECTION -->
     <aside class="search-section">
 
-        <form class="city-search-form">
+        <form id="search-form" class="city-search-form">
             <label class="form-label" for="city-input">
                 <h3 class="search-title">
                 Search for a City
                 </h3>
             </label>
-            <input name="city-input" id="city" type="text" autofocus="true" class="form-input" />
+            <input name="city-input" id="city-input" type="text" autofocus="true" class="form-input" />
             <button type="submit" class="btn search-btn">
                 <i class="fas fa-search"></i>
             </button>
@@ -45,17 +47,16 @@
 
     </aside>
 
-
+    <!-- OVERVIEW SECTION -->
     <section class="weather-overview">
-      <h2 class="subtitle">City Name Here<span id="repo-search-term"></span></h2>
-        <ul class="weather-overview-info">
-            <li>Temperature:</li>
-            <li>Humidity:</li>
-            <li>Wind Speed:</li>
-            <li>Uv Index:</li>
-        </ul>
+        <h2 class="overview-title">City Name Here<span id="searched-city"></span></h2>
+        <p>Temperature: <span class="temperature-data"></span></p>
+        <p>Humidity: <span class="humidity-data"></span></p>
+        <p>Wind Speed: <span class="wind-speed-data"></span></p>
+        <p>UV Index: <span class="UV-index-data"></span></p>
     </section>
 
+    <!-- FORECAST SECTION -->
     <section class="forecast">
         <h2 class="forecast-title">5-Day Forecast:</h2>
 
@@ -95,7 +96,7 @@
     </main>
 
 
-  <script src="./assets/js/homepage.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
