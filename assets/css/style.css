@@ -5,7 +5,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body {
-    background-image: url('/assets/images/cloudy-sky-bg.jpg');
+    background-image: url('../images/cloudy-sky-bg.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: 100%;
