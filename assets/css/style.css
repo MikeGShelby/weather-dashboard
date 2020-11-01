@@ -4,15 +4,13 @@
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 body {
     background-image: url('/assets/images/cloudy-sky-bg.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: 100%;
+    height: 100%;
 }
-
-
 
 /* HEADER */
 .header {
@@ -27,7 +25,6 @@ body {
 .header h1 {
     margin: 0px;
 }
-
 
 /* SEARCH SECTION */
 .search-section {
@@ -74,7 +71,11 @@ body {
     cursor: pointer;
 }
 
-.city-search-list {
+.search-btn:focus {
+    outline: none;
+}
+
+#city-search-list {
     list-style: none;
     padding: 10px;
 }
@@ -83,6 +84,7 @@ body {
     padding: 10px;
     margin: 0px 2px;
     width:100%;
+    text-transform:capitalize;
 }
 
 .city-btn:hover {
@@ -90,7 +92,6 @@ body {
     background-color:  rgb(1, 69, 170);
     color: white;
 }
-
 
 /* WEATHER OVERVIEW SECTION */
 #weather-overview {
@@ -115,15 +116,30 @@ body {
 
 .overview-icon {
     height: 45px;
-    /* filter: brightness(90%); */
-    /* background-color: white;
-    border-radius: 50%; */
+}
+
+.uvi {
+    background-color: green;
+    border-radius: 3px;
+    padding: 5px;
+    color: white;
+}
+
+.uvi-low {
+    background-color: green;
+}
+
+.uvi-moderate {
+    background-color: rgb(223, 135, 3);
+}
+
+.uvi-high {
+    background-color: rgb(202, 36, 14);
 }
 
 /* FORECAST SECTION */
 .forecast {
     display: block;
-    /* margin:auto; */
 }
 
 .forecast-title {
@@ -158,24 +174,40 @@ body {
     justify-content: center;
 }
 
-/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+/* MEDIA QUERY FOR SCREENS AT LEAST 750PX LARGE */
 @media screen and (min-width: 750px) {
     .main-grid {
         display: grid;
         gap:5px;
         grid-template-columns: 1fr 2fr;
-        grid-template-rows: 1fr 3fr;
         grid-template-areas:
         "search-section weather-overview"
         "search-section forecast";
-        padding:0px 10px;
+        padding:0px 10px 0px 0px;
         width: auto;
+    }
+
+    .city-btn {
+        text-align: left;
+    }
+
+    #weather-overview {
+        max-height:300px;
     }
 
 }
 
-/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+/* MEDIA QUERY FOR LARGER SCREENS AT LEAST 1100PX LARGE */
 @media screen and (min-width: 1100px) {
+    #weather-overview {
+    min-height: 290px;
+    }
+
+
+    .search-title {
+        text-align: left;
+    }
+
     .overview-title {
         text-align: left;
     }
@@ -202,6 +234,4 @@ body {
     .forecast-title {
         text-align: left;
     }
-
-
 }
