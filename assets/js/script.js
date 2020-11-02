@@ -1,3 +1,5 @@
+////////// VARIABLES ///////////
+
 // element selectors for search input form event handler
 var searchFormEl = document.querySelector("#search-form");
 var cityInputEl = document.querySelector("#city-input");
@@ -21,6 +23,10 @@ var forecastContainerEl = document.querySelector("#forecast-cards");
 // empty array to store all search inputs
 var searchHistory = []
 
+
+////////// EVENT HANDLERS ///////////
+
+// event handler that will display weather data for a city when the form submit icon is clicked with a search value
 var formSubmitHandler = function(event) {
     event.preventDefault();
 
@@ -41,9 +47,8 @@ var formSubmitHandler = function(event) {
     }
 };
 
+// event handler that will display weather data for a city when a search history button is clicked
 var buttonClickHandler = function(event) {
-    // event.preventDefault();
-
     // get value from input element
     var city = event.target.getAttribute("data-city");
 
@@ -51,17 +56,20 @@ var buttonClickHandler = function(event) {
     getCityCoords(city);
 };
 
+// event handler that will clear search history list when clear history button is clicked
 var clearHistoryHandler = function(event) {
-    console.log("clear history clicked");
-
     // clear search list
     searchListEl.innerHTML = null;
 }
 
+
+////////// GENERAL FUNCTIONS ///////////
+
 // Runs within formSubmitHandler function after search submit button is pressed. Takes searched city as its argument. This function adds each searched city to the searchHistory array, which is then modified to not include any duplicates.
 var createSearchList = function(city) {
-    // clear search list
+    // clear search list and display 'clear search history' button by removing display:none style
     searchListEl.innerHTML = null;
+    clearBtnEl.removeAttribute("style");
 
     // add new search input to start of search history list
     searchHistory.unshift(city);
@@ -88,6 +96,9 @@ var createSearchList = function(city) {
     saveSearchList(uniqueSearchHistory);
 }
 
+
+////////// STORAGE FUNCTIONS ///////////
+
 // save updated uniqueSearchHistory array to localStorage
 var saveSearchList = function(uniqueSearchHistory) {
     localStorage.setItem("cities", JSON.stringify(uniqueSearchHistory));
@@ -97,16 +108,17 @@ var saveSearchList = function(uniqueSearchHistory) {
 }
 
 // get saved search array from localStorage and display to page as buttons
-// var loadSearchList = function() {
-//     var storedCities = JSON.parse(localStorage.getItem("cities"));
+var loadSearchList = function() {
+    var storedCities = JSON.parse(localStorage.getItem("cities"));
+    console.log(storedCities);
 
-//     for (i = 0; 0 < storedCities.length; i++) {
-//         createSearchList(storedCities[i]);
-//     }
-// }
+    // for (i = 0; 0 < storedCities.length; i++) {
+    //     createSearchList(storedCities[i]);
+    // }
+}
 
 
-
+////////// DATA RETRIEVAL FUNCTIONS ///////////
 var getCityCoords = function(city) {
     // format the OpenWeather api url for city name
     var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=f1861af816f9e98e7d029ccebf696d61";
@@ -135,10 +147,12 @@ var getCityData = function(cityLat, cityLon, city) {
     });
 }
 
+////////// HTML/CSS DISPLAY FUNCTIONS ///////////
 
 var displayOverview = function(data, city) {
-    // clear old content
+    // clear old content from overview container and display it by removing display:none style
     overviewContainerEl.innerHTML = null;
+    overviewContainerEl.removeAttribute("style");
 
     // Create and append a title element
     overviewTitleEl = document.createElement("h2");
@@ -251,6 +265,8 @@ var displayForecast = function(data) {
     }
 }
 
+
+////////// EVENT LISTENERS ///////////
 
 searchFormEl.addEventListener("submit", formSubmitHandler);
 searchListEl.addEventListener("click", buttonClickHandler);
