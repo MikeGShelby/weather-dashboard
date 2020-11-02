@@ -60,6 +60,8 @@ var buttonClickHandler = function(event) {
 var clearHistoryHandler = function(event) {
     // clear search list
     searchListEl.innerHTML = null;
+    searchHistory = [];
+    clearBtnEl.setAttribute("style", "display: none");
 }
 
 
@@ -104,7 +106,6 @@ var saveSearchList = function(uniqueSearchHistory) {
     localStorage.setItem("cities", JSON.stringify(uniqueSearchHistory));
 
     var storedCities = JSON.parse(localStorage.getItem("cities"));
-    console.log(storedCities);
 }
 
 // get saved search array from localStorage and display to page as buttons
@@ -124,13 +125,19 @@ var getCityCoords = function(city) {
     var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=f1861af816f9e98e7d029ccebf696d61";
 
     fetch(apiUrl).then(function(response) {
-        response.json().then(function(data) {
+        if (response.ok) {
+            response.json().then(function(data) {
 
-        var cityLat = data.coord.lat;
-        var cityLon = data.coord.lon;
+                var cityLat = data.coord.lat;
+                var cityLon = data.coord.lon;
 
-        getCityData(cityLat, cityLon, city);
-        });
+                getCityData(cityLat, cityLon, city);
+            });
+        }
+
+        else {
+            alert("Error: " + response.statusText);
+          }
     });
 }
 
