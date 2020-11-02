@@ -1,11 +1,19 @@
+// element selectors for search input form event handler
 var searchFormEl = document.querySelector("#search-form");
 var cityInputEl = document.querySelector("#city-input");
 
+// element selectors for search list event handler
 var searchListEl = document.querySelector("#city-search-list");
 var cityBtnEl = document.querySelector(".city-btn");
 
+// element selectors for clear search history event handler
+var clearHistoryEl = document.querySelector("#clear-btn-section");
+var clearBtnEl = document.querySelector(".clear-btn");
+
+// element selectors for weather overview section
 var overviewContainerEl = document.querySelector("#weather-overview");
 
+// element selectors for forecast section
 var forecastSectionEl = document.querySelector(".forecast");
 var forecastTitleEl = document.querySelector(".forecast-title");
 var forecastContainerEl = document.querySelector("#forecast-cards");
@@ -42,6 +50,13 @@ var buttonClickHandler = function(event) {
     // run value through function to display related weather info
     getCityCoords(city);
 };
+
+var clearHistoryHandler = function(event) {
+    console.log("clear history clicked");
+
+    // clear search list
+    searchListEl.innerHTML = null;
+}
 
 // Runs within formSubmitHandler function after search submit button is pressed. Takes searched city as its argument. This function adds each searched city to the searchHistory array, which is then modified to not include any duplicates.
 var createSearchList = function(city) {
@@ -239,5 +254,6 @@ var displayForecast = function(data) {
 
 searchFormEl.addEventListener("submit", formSubmitHandler);
 searchListEl.addEventListener("click", buttonClickHandler);
+clearHistoryEl.addEventListener("click", clearHistoryHandler);
 
 // loadSearchList();

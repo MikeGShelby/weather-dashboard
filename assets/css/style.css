@@ -43,7 +43,6 @@ body {
 
 .city-search-form {
     padding: 10px;
-    margin: 0px 2px;
 }
 
 .city-search-form input {
@@ -80,18 +79,35 @@ body {
     padding: 10px;
 }
 
-.city-btn {
+.btn {
     padding: 10px;
     margin: 0px 2px;
     width:100%;
     text-transform:capitalize;
 }
 
-.city-btn:hover {
+.btn:hover {
     cursor: pointer;
     background-color:  rgb(1, 69, 170);
     color: white;
 }
+
+#clear-btn-section {
+    margin: 20px 10px;
+}
+
+.clear-btn {
+    background-color:  rgb(216, 4, 4);
+    color: white;
+    border: none;
+    border-radius: 2px;
+    position: relative;
+}
+
+.clear-btn:hover {
+    background-color:  rgb(179, 2, 2);
+}
+
 
 /* WEATHER OVERVIEW SECTION */
 #weather-overview {
