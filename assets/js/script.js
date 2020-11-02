@@ -42,6 +42,7 @@ var formSubmitHandler = function(event) {
         // run function to add city input to search list
         createSearchList(city);
     }
+    // prompt user to enter an input if no input exists
     else {
     alert("Please enter a city name");
     }
@@ -58,9 +59,13 @@ var buttonClickHandler = function(event) {
 
 // event handler that will clear search history list when clear history button is clicked
 var clearHistoryHandler = function(event) {
-    // clear search list
+    // clear search list HTML element
     searchListEl.innerHTML = null;
+
+    // clear search items from array
     searchHistory = [];
+
+    // hide clear button
     clearBtnEl.setAttribute("style", "display: none");
 }
 
