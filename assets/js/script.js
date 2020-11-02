@@ -34,34 +34,24 @@ var formSubmitHandler = function(event) {
 };
 
 var buttonClickHandler = function(event) {
-    event.preventDefault();
+    // event.preventDefault();
 
     // get value from input element
     var city = event.target.getAttribute("data-city");
-    console.log(city);
 
-    // if a city name is entered, run functions. Otherwise, prompt user to enter a city name
-    if (city) {
-        // run function to get city latitude and longitude data
-        getCityCoords(city);
-        cityInputEl.value = "";
-
-        // run function to add city input to search list
-        createSearchList(city);
-    }
-    else {
-    alert("Please enter a city name");
-    }
+    // run value through function to display related weather info
+    getCityCoords(city);
 };
 
+// Runs within formSubmitHandler function after search submit button is pressed. Takes searched city as its argument. This function adds each searched city to the searchHistory array, which is then modified to not include any duplicates.
 var createSearchList = function(city) {
     // clear search list
     searchListEl.innerHTML = null;
 
-    // add search input to start of search history list
+    // add new search input to start of search history list
     searchHistory.unshift(city);
 
-    // create search history array with no duplicate values
+    // create search history array variable with no duplicate values
     uniqueSearchHistory = Array.from(new Set(searchHistory));
     console.log(uniqueSearchHistory);
 
@@ -70,7 +60,7 @@ var createSearchList = function(city) {
         // create list item elements
         listItemEl = document.createElement("li");
 
-        // create button elements
+        // create button elements, each with city name added as data attribute to be used with button handler
         searchHistoryBtnEl = document.createElement("button");
         searchHistoryBtnEl.setAttribute("class", "btn city-btn");
         searchHistoryBtnEl.setAttribute("data-city", uniqueSearchHistory[i]);
@@ -83,7 +73,7 @@ var createSearchList = function(city) {
     saveSearchList(uniqueSearchHistory);
 }
 
-
+// save updated uniqueSearchHistory array to localStorage
 var saveSearchList = function(uniqueSearchHistory) {
     localStorage.setItem("cities", JSON.stringify(uniqueSearchHistory));
 
@@ -91,6 +81,7 @@ var saveSearchList = function(uniqueSearchHistory) {
     console.log(storedCities);
 }
 
+// get saved search array from localStorage and display to page as buttons
 // var loadSearchList = function() {
 //     var storedCities = JSON.parse(localStorage.getItem("cities"));
 
