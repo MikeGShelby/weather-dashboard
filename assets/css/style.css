@@ -126,7 +126,7 @@ body {
 .overview-title {
     text-align: center;
     color: rgb(59, 59, 59);
-    font-size: 28px;
+    font-size: 22px;
     text-transform:capitalize;
 }
 
@@ -161,6 +161,8 @@ body {
 .forecast-title {
     text-align: center;
     padding: 10px;
+    color:white;
+    text-shadow: 3px 3px 2px rgb(0,0,0, .8);
 }
 
 #forecast-cards {
@@ -175,18 +177,18 @@ body {
     padding: 25px;
     color: white;
     margin: 10px;
-    min-height: 200px;
+    height: 200px;
     border-radius: 3px;
-    box-shadow: 3px 3px 3px black;
+    box-shadow: 3px 3px 3px rgb(0, 0, 0, .5);
     background-image: linear-gradient(to top left, rgb(1, 69, 170), rgb(5, 105, 255));
 }
 
 .forecast-card p {
-    line-height: 2.5;
+    line-height: 1.5;
 }
 
 .forecast-icon {
-    width: 150px;
+    /* width: 150px; */
     justify-content: center;
 }
 
@@ -226,6 +228,7 @@ body {
 
     .overview-title {
         text-align: left;
+        font-size: 28px;
     }
 
     #forecast-cards {
