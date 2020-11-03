@@ -102,8 +102,24 @@ body {
     border: none;
 }
 
+.city-btn{
+    border:solid .5px rgb(97, 96, 96);
+    background: linear-gradient(to right, rgb(172, 171, 171), rgb(196, 201, 209));
+}
 
 .city-btn:hover {
+    border:solid .5px rgb(101, 151, 226);
+    background: linear-gradient(to right, rgb(1, 69, 170), rgb(71, 128, 214));
+}
+
+.city-btn:focus {
+    outline: none;
+    border: solid 2px rgb(79, 205, 255);
+    box-shadow: 0 0 6px rgb(55, 178, 226);
+    font-weight: bold;
+    color: white;
+
+    border:solid 2px rgb(43, 92, 165);
     background: linear-gradient(to right, rgb(1, 69, 170), rgb(71, 128, 214));
 }
 
@@ -120,7 +136,7 @@ body {
 }
 
 .clear-btn:hover {
-    background-color:  rgb(179, 2, 2);
+    background-color:  rgb(158, 4, 4);
 }
 
 
