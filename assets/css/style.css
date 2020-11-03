@@ -104,7 +104,7 @@ body {
 
 .city-btn{
     border:solid .5px rgb(97, 96, 96);
-    background: linear-gradient(to right, rgb(172, 171, 171), rgb(196, 201, 209));
+    background: linear-gradient(to left, rgb(172, 171, 171), rgb(196, 201, 209));
 }
 
 .city-btn:hover {
