@@ -18,48 +18,43 @@
     </header>
 
     <main class="main-grid">
+        <!-- SEARCH SECTION -->
+        <aside class="search-section">
 
-    <!-- SEARCH SECTION -->
-    <aside class="search-section">
+            <form id="search-form" class="city-search-form">
+                <label class="form-label" for="city-input">
+                    <h3 class="search-title">
+                    Search for a City
+                    </h3>
+                </label>
+                <input name="city-input" id="city-input" type="text" autofocus="true" class="form-input" />
+                <button type="submit" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
 
-        <form id="search-form" class="city-search-form">
-            <label class="form-label" for="city-input">
-                <h3 class="search-title">
-                Search for a City
-                </h3>
-            </label>
-            <input name="city-input" id="city-input" type="text" autofocus="true" class="form-input" />
-            <button type="submit" class="search-btn">
-                <i class="fas fa-search"></i>
-            </button>
-        </form>
+            <ul id="city-search-list">
+            <!-- city search list will display here through JS -->
+            </ul>
 
-        <ul id="city-search-list">
-        <!-- city search list will display here through JS -->
-        </ul>
+            <div id="clear-btn-section">
+                <button class="btn clear-btn" style="display: none;">Clear Search History</button>
+            </div>
+        </aside>
 
-        <div id="clear-btn-section">
-            <button class="btn clear-btn" style="display: none;">Clear Search History</button>
-        </div>
+        <!-- OVERVIEW SECTION -->
+        <section id="weather-overview" style="display: none">
+                <!-- weather overview info will display here through JS -->
+        </section>
 
+        <!-- FORECAST SECTION -->
+        <section class="forecast">
+        <h2 class="forecast-title"></h2>
 
-
-
-    </aside>
-
-    <!-- OVERVIEW SECTION -->
-    <section id="weather-overview" style="display: none">
-            <!-- weather overview info will display here through JS -->
-    </section>
-
-    <!-- FORECAST SECTION -->
-    <section class="forecast">
-       <h2 class="forecast-title"></h2>
-
-        <div id="forecast-cards">
-            <!-- 5-day forecast will display here through JS -->
-        </div>
-      </section>
+            <div id="forecast-cards">
+                <!-- 5-day forecast will display here through JS -->
+            </div>
+        </section>
 
     </main>
 

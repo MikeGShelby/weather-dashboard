@@ -98,8 +98,13 @@ body {
 
 .btn:hover {
     cursor: pointer;
-    background-color:  rgb(1, 69, 170);
     color: white;
+    border: none;
+}
+
+
+.city-btn:hover {
+    background: linear-gradient(to right, rgb(1, 69, 170), rgb(71, 128, 214));
 }
 
 #clear-btn-section {
